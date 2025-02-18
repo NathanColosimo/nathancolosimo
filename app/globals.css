@@ -82,15 +82,18 @@
   }
   
   .animate-background-position-spin {
-    animation: background-position-spin 3s linear infinite;
+    animation: background-position-spin 8s ease-in-out infinite;
   }
 }
 
 @keyframes background-position-spin {
-  from {
+  0% {
     background-position: 0% 0%;
   }
-  to {
-    background-position: 0% 200%;
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }

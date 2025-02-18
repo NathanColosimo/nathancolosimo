@@ -1,7 +1,6 @@
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -65,7 +64,6 @@ export default function RootLayout({
                       </div>
                       <div className="flex items-center gap-4">
                         {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
-                        <ThemeSwitcher />
                       </div>
                     </div>
                   </NeonGradientCard>

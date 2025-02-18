@@ -1,4 +1,6 @@
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+import { GitCloneBtn } from "@/components/git-clone-btn";
+import { SocialDock } from "@/components/social-dock";
 
 export default function Home() {
   return (
@@ -19,30 +21,17 @@ export default function Home() {
             <p className="text-lg text-muted-foreground">
               Welcome to my corner of the internet. I'm passionate about technology, building things, and sharing knowledge.
             </p>
+            <div className="mt-2">
+              <GitCloneBtn />
+            </div>
           </div>
         </NeonGradientCard>
       </section>
 
       {/* Social Links Section */}
-      <section className="flex flex-col gap-6">
+      <section className="flex flex-col gap-6 items-center">
         <h2 className="text-2xl font-semibold neon-text-white">Connect with me</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {/* We'll add social link cards here later */}
-          <div className="h-32 rounded-lg bg-card border border-primary/20 flex items-center justify-center">
-            Social Links Coming Soon
-          </div>
-        </div>
-      </section>
-
-      {/* Built With Section */}
-      <section className="flex flex-col gap-6">
-        <h2 className="text-2xl font-semibold neon-text-white">Built With</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {/* We'll add technology cards here later */}
-          <div className="h-32 rounded-lg bg-card border border-primary/20 flex items-center justify-center">
-            Tech Stack Coming Soon
-          </div>
-        </div>
+        <SocialDock />
       </section>
 
       {/* Projects Section */}
