@@ -46,7 +46,7 @@ export default function RootLayout({
                   <NeonGradientCard
                     neonColors={{
                       firstColor: "#ff0000",
-                      secondColor: "#ffffff"
+                      secondColor: "#ff0000"
                     }}
                     className="w-full h-full"
                   >

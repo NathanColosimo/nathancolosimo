@@ -41,7 +41,7 @@ export function BuiltWith() {
       <NeonGradientCard
         neonColors={{
           firstColor: "#ff0000",
-          secondColor: "#ffffff"
+          secondColor: "#ff0000"
         }}
         className="w-fit"
       >

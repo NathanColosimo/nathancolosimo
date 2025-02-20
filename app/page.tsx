@@ -1,6 +1,10 @@
+"use client";
+
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import { GitCloneBtn } from "@/components/git-clone-btn";
 import { SocialDock } from "@/components/social-dock";
+import { SubstackFeed } from "@/components/substack-feed";
+import { TwitterFeed } from "@/components/twitter-feed";
 
 export default function Home() {
   return (
@@ -10,7 +14,7 @@ export default function Home() {
         <NeonGradientCard
           neonColors={{
             firstColor: "#ff0000",
-            secondColor: "#ffffff"
+            secondColor: "#ff0000"
           }}
           className="w-full"
         >
@@ -48,11 +52,32 @@ export default function Home() {
       {/* Content Feed Section */}
       <section className="flex flex-col gap-6">
         <h2 className="text-2xl font-semibold neon-text-white">Latest Content</h2>
-        <div className="flex flex-col gap-4">
-          {/* We'll add content feed items here later */}
-          <div className="h-32 rounded-lg bg-card border border-primary/20 flex items-center justify-center">
-            Content Feed Coming Soon
-          </div>
+        <div className="flex flex-col gap-6">
+          <NeonGradientCard
+            neonColors={{
+              firstColor: "#ff0000",
+              secondColor: "#ff0000"
+            }}
+            className="w-full"
+          >
+            <div className="p-6">
+              <h3 className="text-lg font-semibold mb-4 neon-text-red">Substack</h3>
+              <SubstackFeed />
+            </div>
+          </NeonGradientCard>
+
+          <NeonGradientCard
+            neonColors={{
+              firstColor: "#ff0000",
+              secondColor: "#ff0000"
+            }}
+            className="w-full"
+          >
+            <div className="p-6">
+              <h3 className="text-lg font-semibold mb-4 neon-text-red">Twitter</h3>
+              <TwitterFeed />
+            </div>
+          </NeonGradientCard>
         </div>
       </section>
     </div>
