@@ -1,85 +1,85 @@
 "use client";
 
-import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
-import { GitCloneBtn } from "@/components/git-clone-btn";
 import { SocialDock } from "@/components/social-dock";
 import { SubstackFeed } from "@/components/substack-feed";
 import { TwitterFeed } from "@/components/twitter-feed";
+import { RetroGrid } from "@/components/magicui/retro-grid";
+import { TextReveal } from "@/components/magicui/text-reveal";
+import Script from "next/script";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 w-full">
-      {/* Hero Section */}
-      <section className="flex flex-col gap-8">
-        <NeonGradientCard
-          neonColors={{
-            firstColor: "#ff0000",
-            secondColor: "#ff0000"
-          }}
-          className="w-full"
-        >
+    <div className="relative flex flex-col gap-24 w-full min-h-screen">
+      <RetroGrid 
+        className="fixed inset-0"
+        opacity={0.2}
+        lightLineColor="hsl(var(--accent))"
+        darkLineColor="hsl(var(--accent))"
+        cellSize={40}
+        angle={35}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col gap-24 w-full">
+        {/* Hero Section */}
+        <section className="flex flex-col gap-4 pt-24">
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl font-bold neon-text-red">
-              Hey, I'm Nathan Colosimo 👋
+            <h1 className="text-8xl font-bold text-foreground border-b-2 border-primary pb-4 inline-block w-fit font-heading">
+              Hi.
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Welcome to my corner of the internet. I'm passionate about technology, building things, and sharing knowledge.
-            </p>
-            <div className="mt-2">
-              <GitCloneBtn />
+            <div className="min-h-[50vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground">
+              <TextReveal 
+                text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓" 
+                className="text-foreground"
+              />
             </div>
           </div>
-        </NeonGradientCard>
-      </section>
+        </section>
 
-      {/* Social Links Section */}
-      <section className="flex flex-col gap-6 items-center">
-        <h2 className="text-2xl font-semibold neon-text-white">Connect with me</h2>
-        <SocialDock />
-      </section>
+        {/* Social Links Section */}
+        <section className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold text-foreground border-b-2 border-accent pb-2 inline-block w-fit font-heading">Links</h2>
+          <SocialDock />
+        </section>
 
-      {/* Projects Section */}
-      <section className="flex flex-col gap-6">
-        <h2 className="text-2xl font-semibold neon-text-white">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* We'll add project cards here later */}
-          <div className="h-64 rounded-lg bg-card border border-primary/20 flex items-center justify-center">
-            Projects Coming Soon
+        {/* Projects Section */}
+        <section className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold text-foreground border-b-2 border-accent pb-2 inline-block w-fit font-heading">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="h-64 rounded-lg bg-white/5 backdrop-blur-sm border border-accent/10 shadow-lg flex items-center justify-center text-muted-foreground">
+              Projects Coming Soon
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Content Feed Section */}
-      <section className="flex flex-col gap-6">
-        <h2 className="text-2xl font-semibold neon-text-white">Latest Content</h2>
-        <div className="flex flex-col gap-6">
-          <NeonGradientCard
-            neonColors={{
-              firstColor: "#ff0000",
-              secondColor: "#ff0000"
-            }}
-            className="w-full"
-          >
-            <div className="p-6">
-              <h3 className="text-lg font-semibold mb-4 neon-text-red">Substack</h3>
-              <SubstackFeed />
+        {/* Content Feed Section */}
+        <section className="flex flex-col gap-12">
+          <h2 className="text-2xl font-semibold text-foreground border-b-2 border-accent pb-2 inline-block w-fit font-heading">Latest Content</h2>
+          
+          <div className="flex flex-col gap-16">
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium text-foreground font-heading">Substack</h3>
+              <div className="rounded-lg overflow-hidden border border-accent/10 shadow-lg">
+                <SubstackFeed />
+              </div>
             </div>
-          </NeonGradientCard>
 
-          <NeonGradientCard
-            neonColors={{
-              firstColor: "#ff0000",
-              secondColor: "#ff0000"
-            }}
-            className="w-full"
-          >
-            <div className="p-6">
-              <h3 className="text-lg font-semibold mb-4 neon-text-red">Twitter</h3>
-              <TwitterFeed />
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium text-foreground font-heading">
+                X <a 
+                  href="https://x.com/thenathancolo" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-accent hover:underline"
+                >@thenathancolo</a>
+              </h3>
+              <div className="rounded-lg overflow-hidden border border-accent/10 shadow-lg">
+                <TwitterFeed />
+              </div>
             </div>
-          </NeonGradientCard>
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

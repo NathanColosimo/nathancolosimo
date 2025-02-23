@@ -19,6 +19,8 @@ const config = {
   	},
   	extend: {
   		fontFamily: {
+  			sans: ["var(--font-general)"],
+  			heading: ["var(--font-satoshi)"],
   			mono: ["var(--font-jetbrains)", "monospace"],
   		},
   		colors: {

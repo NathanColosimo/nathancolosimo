@@ -12,7 +12,7 @@ export function GitCloneBtn() {
       lightTheme="github-light"
       darkTheme="github-dark"
       commandMap={commandMap}
-      className="w-full max-w-xl"
+      className="w-full max-w-xl [&_svg]:w-5 [&_svg]:h-5"
     />
   );
 } 
