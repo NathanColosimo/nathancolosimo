@@ -1,7 +1,5 @@
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
-import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
@@ -67,11 +65,11 @@ export default function RootLayout({
                           <span>Nathan Colosimo</span>
                         </Link>
                       </div>
-                      <div className="flex-1 flex justify-center max-w-[300px] mx-8">
+                      <div className="flex-1 flex justify-center">
                         <GitCloneBtn />
                       </div>
                       <div className="flex items-center gap-4">
-                        {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                        <HeaderAuth />
                       </div>
                     </div>
                   </div>

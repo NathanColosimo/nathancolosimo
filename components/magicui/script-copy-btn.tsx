@@ -124,7 +124,7 @@ export function ScriptCopyBtn({
           <Button
             variant="outline"
             size="icon"
-            className="relative ml-2 rounded-md"
+            className="relative ml-2 rounded-md h-10 w-10 [&_svg]:text-foreground hover:[&_svg]:text-foreground"
             onClick={copyToClipboard}
             aria-label={copied ? "Copied" : "Copy to clipboard"}
           >
