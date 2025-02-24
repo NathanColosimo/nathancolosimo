@@ -32,7 +32,7 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            <div className="min-h-[20vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground">
+            <div className="min-h-[20vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground [&_p]:!text-3xl md:[&_p]:!text-4xl lg:[&_p]:!text-5xl xl:[&_p]:!text-6xl">
               <TextReveal 
                 text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓" 
                 className="!h-[150vh]"
