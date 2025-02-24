@@ -2,6 +2,7 @@ import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import HeaderAuth from "@/components/header-auth";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BuiltWith } from "@/components/built-with";
@@ -39,21 +40,34 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="min-h-screen flex flex-col items-center relative">
-            <div className="absolute top-5 right-5 z-50">
-              <div className="flex items-center gap-2 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-accent">
-                  <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                </svg>
+            {/* Mobile: Built With and Location side by side above header */}
+            <div className="md:hidden w-full max-w-5xl px-3 pt-3">
+              <div className="flex justify-between items-center gap-3">
+                <BuiltWith className="!static !flex !flex-row !items-center !gap-2 !p-2 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg [&_div.flex]:!flex-row [&_div.flex]:!p-2 [&_div.flex]:!gap-2 [&_div.-space-y-2]:!space-y-0 [&_div.-space-y-2]:!space-x-2 [&_h2]:!border-none [&_h2]:!m-0" />
+                <div className="flex items-center gap-2 p-2 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg">
+                  <MapPin className="w-4 h-4 text-accent" />
+                  <span className="text-sm font-medium text-accent" style={{ fontFamily: 'var(--font-satoshi)' }}>
+                    London, UK
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop: Location in top right */}
+            <div className="hidden md:block absolute top-5 right-5 z-50">
+              <div className="flex items-center gap-2 p-2 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg">
+                <MapPin className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-accent" style={{ fontFamily: 'var(--font-satoshi)' }}>
                   London, UK
                 </span>
               </div>
             </div>
+
             <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              <nav className="w-full flex justify-center h-24">
+              <nav className="w-full flex justify-center">
                 <div className="w-full max-w-5xl p-3">
-                  <div className="w-full h-full bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg shadow-lg">
-                    <div className="flex justify-between items-center h-full px-5">
+                  <div className="w-full min-h-[6rem] md:h-24 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg shadow-lg">
+                    <div className="flex flex-col md:flex-row justify-center md:justify-between items-center h-full px-5 py-4 md:py-0 gap-4 md:gap-0">
                       <div className="flex gap-5 items-center">
                         <Link href="/" className="text-xl font-bold flex items-center gap-3 text-foreground hover:text-primary transition-colors font-heading">
                           <Image
@@ -65,12 +79,8 @@ export default function RootLayout({
                           <span>Nathan Colosimo</span>
                         </Link>
                       </div>
-                      <div className="flex-1" />
-                      <div className="pr-8">
+                      <div className="flex items-center pr-10">
                         <GitCloneBtn />
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <HeaderAuth />
                       </div>
                     </div>
                   </div>
@@ -81,7 +91,10 @@ export default function RootLayout({
                 {children}
               </div>
 
-              <BuiltWith />
+              {/* Built With - shows at bottom on larger screens */}
+              <div className="hidden md:block">
+                <BuiltWith />
+              </div>
 
               <footer className="w-full border-t border-accent/10">
                 <div className="max-w-5xl mx-auto py-8 px-5 flex items-center justify-between">

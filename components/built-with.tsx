@@ -1,8 +1,13 @@
 import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export function BuiltWith() {
+interface BuiltWithProps {
+  className?: string;
+}
+
+export function BuiltWith({ className }: BuiltWithProps) {
   const tools = [
     {
       name: "Cursor",
@@ -36,8 +41,10 @@ export function BuiltWith() {
     }
   ];
 
+  const isHorizontal = className?.includes('!flex-row');
+
   return (
-    <div className="absolute left-5 top-5 z-50">
+    <div className={cn("absolute left-5 top-5 z-50", className)}>
       <div className="flex flex-col items-center gap-2 p-4">
         <h2 className="text-sm font-bold text-foreground border-b border-accent">Built with</h2>
         <div className="flex flex-col items-center -space-y-2">
@@ -60,7 +67,12 @@ export function BuiltWith() {
                     className={tool.className}
                   />
                 </div>
-                <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2 py-1 rounded bg-white/5 backdrop-blur-sm border border-accent/10 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className={cn(
+                  "absolute pointer-events-none px-2 py-1 rounded bg-white/5 backdrop-blur-sm border border-accent/10 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity",
+                  isHorizontal
+                    ? "left-1/2 -translate-x-1/2 bottom-full mb-2" // Horizontal layout (mobile)
+                    : "left-full ml-3 top-1/2 -translate-y-1/2" // Vertical layout (desktop)
+                )}>
                   {tool.name}
                 </span>
               </div>
