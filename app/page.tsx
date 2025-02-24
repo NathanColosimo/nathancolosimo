@@ -24,9 +24,14 @@ export default function Home() {
         {/* Hero Section */}
         <section className="flex flex-col gap-4 pt-12">
           <div className="flex flex-col gap-4">
-            <h1 className="text-8xl font-bold text-foreground border-b-2 border-primary pb-4 inline-block w-fit font-heading">
-              Hi.
-            </h1>
+            <div className="w-fit">
+              <div className="group relative w-fit">
+                <div className="absolute -inset-4 bg-secondary/50 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-300" />
+                <h1 className="text-8xl font-bold text-foreground border-b-2 border-primary pb-4 relative font-heading">
+                  Hi.
+                </h1>
+              </div>
+            </div>
             <div className="min-h-[20vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground">
               <TextReveal 
                 text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓" 
@@ -46,8 +51,11 @@ export default function Home() {
         <section className="flex flex-col gap-6">
           <h2 className="text-2xl font-semibold text-foreground border-b-2 border-accent pb-2 inline-block w-fit font-heading">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="h-64 rounded-lg bg-white/5 backdrop-blur-sm border border-accent/10 shadow-lg flex items-center justify-center text-muted-foreground">
-              Projects Coming Soon
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-secondary/30 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
+              <div className="h-64 rounded-lg bg-white/5 backdrop-blur-sm border border-accent/10 shadow-lg flex items-center justify-center text-muted-foreground relative">
+                Projects Coming Soon
+              </div>
             </div>
           </div>
         </section>

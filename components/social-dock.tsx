@@ -19,6 +19,12 @@ const SOCIALS = {
     icon: "/images/instagram-logo.svg",
     className: ""
   },
+  LinkedIn: {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/nathancolosimo/",
+    icon: "/images/linkedin-logo.svg",
+    className: ""
+  },
   Substack: {
     name: "Substack",
     url: "https://substack.com/@nathancolosimo",
