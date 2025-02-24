@@ -20,17 +20,17 @@ export default function Home() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col gap-24 w-full">
+      <div className="relative z-10 flex flex-col gap-16 w-full">
         {/* Hero Section */}
-        <section className="flex flex-col gap-4 pt-24">
+        <section className="flex flex-col gap-4 pt-12">
           <div className="flex flex-col gap-4">
             <h1 className="text-8xl font-bold text-foreground border-b-2 border-primary pb-4 inline-block w-fit font-heading">
               Hi.
             </h1>
-            <div className="min-h-[50vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground">
+            <div className="min-h-[20vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground">
               <TextReveal 
                 text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓" 
-                className="text-foreground"
+                className="!h-[150vh]"
               />
             </div>
           </div>
