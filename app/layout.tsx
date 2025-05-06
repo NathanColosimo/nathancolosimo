@@ -47,7 +47,7 @@ export default function RootLayout({
                 <div className="flex items-center gap-2 p-2 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg">
                   <MapPin className="w-4 h-4 text-accent" />
                   <span className="text-sm font-medium text-accent" style={{ fontFamily: 'var(--font-satoshi)' }}>
-                    London, UK
+                    NYC
                   </span>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function RootLayout({
               <div className="flex items-center gap-2 p-2 bg-white/5 backdrop-blur-sm border border-accent/10 rounded-lg">
                 <MapPin className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-accent" style={{ fontFamily: 'var(--font-satoshi)' }}>
-                  London, UK
+                  NYC
                 </span>
               </div>
             </div>
