@@ -1,9 +1,9 @@
+import { cacheLife } from "next/cache";
 import React from "react";
 import PostCardDisplay from "@/components/post-card-display";
 import { ItemGroup, ItemSeparator } from "@/components/ui/item";
 import { userPostsForId } from "@/lib/posts";
 import { profileForHandle } from "@/lib/profile";
-import { cacheLife } from "next/cache";
 
 type PostListProps = {
   profileHandle: string;

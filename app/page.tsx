@@ -1,11 +1,13 @@
+import EducationSection from "@/components/education-section";
+import ExperienceSection from "@/components/experience-section";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import PostList from "@/components/post-list";
+import ProjectSection from "@/components/project-section";
 import { SocialDock } from "@/components/social-dock";
 
 export default function Home() {
-
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="flex w-full max-w-5xl flex-col gap-20 p-5">
@@ -30,20 +32,14 @@ export default function Home() {
               <SocialDock />
             </section>
 
+            {/* Work Experience Section */}
+            <ExperienceSection />
+
             {/* Projects Section */}
-            <section className="flex flex-col gap-6">
-              <h2 className="w-fit border-accent border-b-2 pb-2 font-heading font-semibold text-2xl">
-                Projects
-              </h2>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div className="group relative">
-                  <div className="-inset-1 absolute rounded-lg bg-secondary/30 blur-xl transition-all duration-300 group-hover:blur-2xl" />
-                  <div className="relative flex h-64 items-center justify-center rounded-lg border border-accent/10 bg-white/5 text-muted-foreground">
-                    Projects Coming Soon
-                  </div>
-                </div>
-              </div>
-            </section>
+            <ProjectSection />
+
+            {/* Education Section */}
+            <EducationSection />
 
             {/* Content Feed Section */}
             <section className="flex flex-col gap-12">
