@@ -35,7 +35,7 @@ export function SubstackFeed() {
   return (
     <div className="group relative">
       <div className="absolute -inset-1 bg-secondary/30 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
-      <div className="w-full bg-white/5 backdrop-blur-sm border border-accent/10 shadow-lg relative">
+      <div className="w-full bg-white/5 backdrop-blur-xs border border-accent/10 shadow-lg relative">
         <style jsx global>{`
           #substack-feed-embed {
             font-family: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif !important;

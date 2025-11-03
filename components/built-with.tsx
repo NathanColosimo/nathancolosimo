@@ -41,7 +41,7 @@ export function BuiltWith({ className }: BuiltWithProps) {
     }
   ];
 
-  const isHorizontal = className?.includes('!flex-row');
+  const isHorizontal = className?.includes('flex-row!');
 
   return (
     <div className={cn("absolute left-5 top-5 z-50", className)}>
@@ -57,7 +57,7 @@ export function BuiltWith({ className }: BuiltWithProps) {
               className="group relative transition-transform duration-200 hover:z-10 hover:scale-110"
               style={{ zIndex: tools.length - index }}
             >
-              <div className="relative bg-white/5 backdrop-blur-sm w-10 h-10 rounded-full border border-accent/10 shadow-lg transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-accent/20">
+              <div className="relative bg-white/5 backdrop-blur-xs w-10 h-10 rounded-full border border-accent/10 shadow-lg transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-accent/20">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
                     src={tool.logo}
@@ -68,7 +68,7 @@ export function BuiltWith({ className }: BuiltWithProps) {
                   />
                 </div>
                 <span className={cn(
-                  "absolute pointer-events-none px-2 py-1 rounded bg-white/5 backdrop-blur-sm border border-accent/10 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity",
+                  "absolute pointer-events-none px-2 py-1 rounded bg-white/5 backdrop-blur-xs border border-accent/10 text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity",
                   isHorizontal
                     ? "left-1/2 -translate-x-1/2 bottom-full mb-2" // Horizontal layout (mobile)
                     : "left-full ml-3 top-1/2 -translate-y-1/2" // Vertical layout (desktop)

@@ -12,7 +12,7 @@ export function GitCloneBtn() {
       lightTheme="vitesse-light"
       darkTheme="vitesse-dark"
       commandMap={commandMap}
-      className="max-w-[280px] [&_button]:hover:bg-black/5 [&_button]:hover:border-border [&_button]:transition-colors"
+      className="max-w-[280px] hover:[&_button]:bg-black/5 hover:[&_button]:border-border [&_button]:transition-colors"
     />
   );
 } 

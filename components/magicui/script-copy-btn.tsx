@@ -89,7 +89,7 @@ export function ScriptCopyBtn({
                       {pm}
                       {packageManager === pm && (
                         <motion.div
-                          className="absolute inset-x-0 bottom-[1px] mx-auto h-0.5 w-[90%] bg-primary"
+                          className="absolute inset-x-0 bottom-px mx-auto h-0.5 w-[90%] bg-primary"
                           layoutId="activeTab"
                           initial={false}
                           transition={{
@@ -124,7 +124,7 @@ export function ScriptCopyBtn({
           <Button
             variant="outline"
             size="icon"
-            className="relative ml-2 rounded-md h-10 w-10 [&_svg]:text-foreground hover:[&_svg]:text-foreground"
+            className="relative ml-2 rounded-md h-10 w-10 [&_svg]:text-foreground [&_svg]:hover:text-foreground"
             onClick={copyToClipboard}
             aria-label={copied ? "Copied" : "Copy to clipboard"}
           >

@@ -47,7 +47,7 @@ export function SocialDock() {
         iconSize={60}
         iconMagnification={90}
         iconDistance={120}
-        className="bg-white/5 backdrop-blur-sm border border-accent/10 p-3"
+        className="bg-white/5 backdrop-blur-xs border border-accent/10 p-3"
       >
         {Object.entries(SOCIALS).map(([name, social]) => (
           <DockIcon 

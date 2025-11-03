@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   experimental: {
     turbopackFileSystemCacheForDev: true,
   },
+  turbopack: {
+    root: __dirname,
+  }
 };
 
 export default nextConfig;

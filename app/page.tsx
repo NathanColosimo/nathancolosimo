@@ -32,10 +32,10 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            <div className="min-h-[20vh] [&_p]:!text-white/20 [&_span.absolute]:!text-white/20 [&_span.motion]:!text-foreground [&_p]:!text-3xl md:[&_p]:!text-4xl lg:[&_p]:!text-5xl xl:[&_p]:!text-6xl">
+            <div className="min-h-[20vh] [&_p]:text-white/20! [&_span.absolute]:text-white/20! [&_span.motion]:text-foreground! [&_p]:text-3xl! md:[&_p]:text-4xl! lg:[&_p]:text-5xl! xl:[&_p]:text-6xl!">
               <TextReveal 
                 text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓" 
-                className="!h-[150vh]"
+                className="h-[150vh]!"
               />
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group relative">
               <div className="absolute -inset-1 bg-secondary/30 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <div className="h-64 rounded-lg bg-white/5 backdrop-blur-sm border border-accent/10 shadow-lg flex items-center justify-center text-muted-foreground relative">
+              <div className="h-64 rounded-lg bg-white/5 backdrop-blur-xs border border-accent/10 shadow-lg flex items-center justify-center text-muted-foreground relative">
                 Projects Coming Soon
               </div>
             </div>
