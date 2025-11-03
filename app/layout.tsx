@@ -29,7 +29,10 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground" suppressHydrationWarning>
+      <body
+        className="bg-background text-foreground antialiased"
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

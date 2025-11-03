@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/item";
 import { cn } from "@/lib/utils";
 
-type ExperienceItemProps = {
+export type ExperienceItemProps = {
   // Company/organization name
   company: string;
   // Job title/position
@@ -79,11 +79,7 @@ export function ExperienceItem({
 
   if (href) {
     return (
-      <Item
-        asChild
-        className={cn("transition-colors hover:border-accent/30", className)}
-        variant="outline"
-      >
+      <Item asChild className={cn("hover:bg-muted/30", className)}>
         <a href={href} rel="noopener noreferrer" target="_blank">
           {content}
         </a>
@@ -92,7 +88,7 @@ export function ExperienceItem({
   }
 
   return (
-    <Item className={className} role="listitem" variant="outline">
+    <Item className={cn("hover:bg-muted/30", className)} role="listitem">
       {content}
     </Item>
   );

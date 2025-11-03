@@ -44,7 +44,7 @@ export function ProjectItem({
   className,
 }: ProjectItemProps) {
   return (
-    <Item className={cn("group", className)} role="listitem" variant="outline">
+    <Item className={cn("group hover:bg-muted/30", className)} role="listitem">
       {/* Icon/Image media */}
       {icon && <ItemMedia variant="icon">{icon}</ItemMedia>}
 

@@ -4,13 +4,12 @@ import type * as React from "react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
-function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+function ItemGroup({ className, ...props }: React.ComponentProps<"ul">) {
   return (
-    // biome-ignore lint/a11y/useSemanticElements: role list is valid
-    <div
-      className={cn("group/item-group flex flex-col", className)}
+    // Render a simple list wrapper without forcing heavy spacing so cards feel tighter
+    <ul
+      className={cn("group/item-group flex flex-col gap-4", className)}
       data-slot="item-group"
-      role="list"
       {...props}
     />
   );
@@ -31,17 +30,18 @@ function ItemSeparator({
 }
 
 const itemVariants = cva(
-  "group/item flex flex-wrap items-center rounded-md border border-transparent text-sm outline-none transition-colors duration-100 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors [a]:hover:bg-accent/50",
+  // Provide a compact, borderless base style so cards feel lighter while keeping focus styles
+  "group/item flex flex-wrap items-start rounded-lg bg-transparent text-sm outline-none transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors [a]:hover:bg-muted/20",
   {
     variants: {
       variant: {
         default: "bg-transparent",
-        outline: "border-border",
-        muted: "bg-muted/50",
+        outline: "bg-muted/20",
+        muted: "bg-muted/40",
       },
       size: {
-        default: "gap-4 p-4",
-        sm: "gap-2.5 px-4 py-3",
+        default: "gap-3 p-3",
+        sm: "gap-2.5 px-3 py-2",
       },
     },
     defaultVariants: {
@@ -133,7 +133,8 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
       className={cn(
-        "line-clamp-2 text-balance font-normal text-muted-foreground text-sm leading-normal",
+        // Allow full text to display so longer descriptions remain visible inside the compact layout
+        "text-balance font-normal text-muted-foreground text-sm leading-relaxed",
         "[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
         className
       )}
