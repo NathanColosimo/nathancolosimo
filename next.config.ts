@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   experimental: {
     turbopackFileSystemCacheForDev: true,
   },
-  turbopack: {
-    root: import.meta.dirname,
-  },
   images: {
     remotePatterns: [
       {
