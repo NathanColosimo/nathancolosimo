@@ -44,27 +44,9 @@ export default function Home() {
             {/* Content Feed Section */}
             <section className="flex flex-col gap-12">
               <h2 className="w-fit border-accent border-b-2 pb-2 font-heading font-semibold text-2xl">
-                Latest Content
+                Substack
               </h2>
-              <div className="flex flex-col gap-16">
-                <div className="space-y-4">
-                  <h3 className="font-heading font-medium text-xl">Substack</h3>
-                  <PostList profileHandle="nathancolosimo" />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="font-heading font-medium text-xl">
-                    X{" "}
-                    <a
-                      className="text-accent hover:underline"
-                      href="https://x.com/thenathancolo"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      @thenathancolo
-                    </a>
-                  </h3>
-                </div>
-              </div>
+              <PostList profileHandle="nathancolosimo" />
             </section>
           </div>
         </div>
