@@ -1,9 +1,8 @@
-"use client";
-
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { TextReveal } from "@/components/magicui/text-reveal";
+import PostList from "@/components/post-list";
 import { SocialDock } from "@/components/social-dock";
 
 export default function Home() {
@@ -70,9 +69,7 @@ export default function Home() {
               <div className="flex flex-col gap-16">
                 <div className="space-y-4">
                   <h3 className="font-heading font-medium text-xl">Substack</h3>
-                  <div className="rounded-lg border border-accent/10">
-                    {/* <SubstackFeed /> */}
-                  </div>
+                    <PostList profileHandle="nathancolosimo" />
                 </div>
                 <div className="space-y-4">
                   <h3 className="font-heading font-medium text-xl">

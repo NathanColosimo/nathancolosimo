@@ -21,7 +21,13 @@ export default function PostCardDisplay(props: PostCardDisplayProps) {
     <Item variant="default">
       {post.cover_image && (
         <ItemMedia variant="image">
-          <Image alt={post.title} src={post.cover_image} width={200} />
+          <Image
+            alt={post.title}
+            height={200}
+            src={post.cover_image}
+            unoptimized
+            width={200}
+          />
         </ItemMedia>
       )}
       <ItemContent className="gap-1.5">
