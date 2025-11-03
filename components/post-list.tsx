@@ -1,0 +1,30 @@
+import React from "react";
+import PostCardDisplay from "@/components/post-card-display";
+import { ItemGroup, ItemSeparator } from "@/components/ui/item";
+import { userPostsForId } from "@/lib/posts";
+import { profileForHandle } from "@/lib/profile";
+
+type PostListProps = {
+  profileHandle: string;
+};
+
+export default async function PostList(props: PostListProps) {
+  const profile = await profileForHandle(props.profileHandle);
+
+  const postList = await userPostsForId(profile.id, { limit: 10 });
+
+  return (
+    <div className="flex w-full max-w-md flex-col gap-6">
+      <ItemGroup>
+        {postList.map((post, index) => (
+          <React.Fragment key={post.id}>
+            <PostCardDisplay post={post} />
+            {index !== postList.length - 1 && (
+              <ItemSeparator className="my-4" />
+            )}
+          </React.Fragment>
+        ))}
+      </ItemGroup>
+    </div>
+  );
+}
