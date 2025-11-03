@@ -52,18 +52,18 @@ export function RetroGrid({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute size-full overflow-hidden perspective-[200px]",
-        `opacity-(--opacity)`,
-        className,
+        "perspective-[200px] pointer-events-none absolute size-full overflow-hidden",
+        "opacity-(--opacity)",
+        className
       )}
       style={gridStyles}
       {...props}
     >
-      <div className="absolute inset-0 transform-[rotateX(var(--grid-angle))]">
-        <div className="animate-grid bg-[linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] bg-repeat bg-size-[var(--cell-size)_var(--cell-size)] h-[300vh] inset-[0%_0px] ml-[-200%] origin-[100%_0_0] w-[600vw] dark:bg-[linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]" />
+      <div className="transform-[rotateX(var(--grid-angle))] absolute inset-0">
+        <div className="inset-[0%_0px] ml-[-200%] h-[300vh] w-[600vw] origin-[100%_0_0] animate-grid bg-[linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] bg-size-[var(--cell-size)_var(--cell-size)] bg-repeat dark:bg-[linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]" />
       </div>
 
-      <div className="absolute inset-0 bg-linear-to-t from-white to-transparent to-90% dark:from-black" />
+      <div className="absolute inset-0 bg-linear-to-t from-white to-90% to-transparent dark:from-black" />
     </div>
   );
 }

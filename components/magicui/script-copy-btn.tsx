@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
-import { HTMLAttributes, useEffect, useState } from "react";
+import { type HTMLAttributes, useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ScriptCopyBtnProps extends HTMLAttributes<HTMLDivElement> {
   showMultiplePackageOptions?: boolean;
@@ -63,7 +63,7 @@ export function ScriptCopyBtn({
     <div
       className={cn(
         "mx-auto flex max-w-md items-center justify-center",
-        className,
+        className
       )}
     >
       <div className="w-full space-y-2">
@@ -72,26 +72,26 @@ export function ScriptCopyBtn({
             <div className="relative">
               <div className="inline-flex overflow-hidden rounded-md border border-border text-xs">
                 {packageManagers.map((pm, index) => (
-                  <div key={pm} className="flex items-center">
+                  <div className="flex items-center" key={pm}>
                     {index > 0 && (
-                      <div className="h-4 w-px bg-border" aria-hidden="true" />
+                      <div aria-hidden="true" className="h-4 w-px bg-border" />
                     )}
                     <Button
-                      variant="ghost"
-                      size="sm"
                       className={`relative rounded-none bg-background px-2 py-1 hover:bg-background ${
                         packageManager === pm
                           ? "text-primary"
                           : "text-muted-foreground"
                       }`}
                       onClick={() => setPackageManager(pm)}
+                      size="sm"
+                      variant="ghost"
                     >
                       {pm}
                       {packageManager === pm && (
                         <motion.div
                           className="absolute inset-x-0 bottom-px mx-auto h-0.5 w-[90%] bg-primary"
-                          layoutId="activeTab"
                           initial={false}
+                          layoutId="activeTab"
                           transition={{
                             type: "spring",
                             stiffness: 500,
@@ -122,11 +122,11 @@ export function ScriptCopyBtn({
             )}
           </div>
           <Button
-            variant="outline"
-            size="icon"
-            className="relative ml-2 rounded-md h-10 w-10 [&_svg]:text-foreground [&_svg]:hover:text-foreground"
-            onClick={copyToClipboard}
             aria-label={copied ? "Copied" : "Copy to clipboard"}
+            className="relative ml-2 h-10 w-10 rounded-md [&_svg]:text-foreground [&_svg]:hover:text-foreground"
+            onClick={copyToClipboard}
+            size="icon"
+            variant="outline"
           >
             <span className="sr-only">{copied ? "Copied" : "Copy"}</span>
             <Copy

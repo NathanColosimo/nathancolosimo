@@ -1,75 +1,75 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
 
 const SOCIALS = {
   GitHub: {
     name: "GitHub",
     url: "https://github.com/NathanColosimo",
     icon: "/images/github-logo.svg",
-    className: ""
+    className: "",
   },
   Instagram: {
     name: "Instagram",
     url: "https://www.instagram.com/nathan_colosimo/",
     icon: "/images/instagram-logo.svg",
-    className: ""
+    className: "",
   },
   LinkedIn: {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/nathancolosimo/",
     icon: "/images/linkedin-logo.svg",
-    className: ""
+    className: "",
   },
   Substack: {
     name: "Substack",
     url: "https://substack.com/@nathancolosimo",
     icon: "/images/substack-logo.svg",
-    className: ""
+    className: "",
   },
   X: {
     name: "X",
     url: "https://x.com/thenathancolo",
     icon: "/images/x-logo.svg",
-    className: ""
-  }
+    className: "",
+  },
 };
 
 export function SocialDock() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <Dock 
+      <Dock
+        className="border border-accent/10 bg-white/5 p-3 backdrop-blur-xs"
         direction="middle"
-        iconSize={60}
-        iconMagnification={90}
         iconDistance={120}
-        className="bg-white/5 backdrop-blur-xs border border-accent/10 p-3"
+        iconMagnification={90}
+        iconSize={60}
       >
         {Object.entries(SOCIALS).map(([name, social]) => (
-          <DockIcon 
+          <DockIcon
+            className="rounded-full transition-colors hover:bg-black/5"
             key={name}
-            className="hover:bg-black/5 transition-colors rounded-full"
           >
             <Link
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label={social.name}
               className={cn(
                 buttonVariants({ variant: "ghost", size: "icon" }),
                 "size-14 rounded-full hover:bg-transparent focus-visible:ring-0"
               )}
+              href={social.url}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <Image
-                src={social.icon}
                 alt={social.name}
-                width={28}
-                height={28}
                 className={`${social.className}`}
+                height={28}
+                src={social.icon}
+                width={28}
               />
             </Link>
           </DockIcon>
@@ -77,4 +77,4 @@ export function SocialDock() {
       </Dock>
     </div>
   );
-} 
+}

@@ -7,12 +7,12 @@ export function GitCloneBtn() {
 
   return (
     <ScriptCopyBtn
-      showMultiplePackageOptions={false}
+      className="max-w-[280px] [&_button]:transition-colors hover:[&_button]:border-border hover:[&_button]:bg-black/5"
       codeLanguage="shell"
-      lightTheme="vitesse-light"
-      darkTheme="vitesse-dark"
       commandMap={commandMap}
-      className="max-w-[280px] hover:[&_button]:bg-black/5 hover:[&_button]:border-border [&_button]:transition-colors"
+      darkTheme="vitesse-dark"
+      lightTheme="vitesse-light"
+      showMultiplePackageOptions={false}
     />
   );
-} 
+}

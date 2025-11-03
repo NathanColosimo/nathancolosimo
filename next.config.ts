@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
   turbopack: {
-    root: __dirname,
-  }
+    root: import.meta.dirname,
+  },
 };
 
 export default nextConfig;

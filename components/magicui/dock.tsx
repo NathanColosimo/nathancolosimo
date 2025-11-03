@@ -1,15 +1,17 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: Imported element */
+/** biome-ignore-all lint/style/noMagicNumbers: Magic numbers */
 "use client";
 
 import { cva, type VariantProps } from "class-variance-authority";
 import {
+  type MotionProps,
+  type MotionValue,
   motion,
-  MotionProps,
-  MotionValue,
   useMotionValue,
   useSpring,
   useTransform,
 } from "motion/react";
-import React, { PropsWithChildren, useRef } from "react";
+import React, { type PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -27,7 +29,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -41,16 +43,16 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       direction = "middle",
       ...props
     },
-    ref,
+    ref
   ) => {
-    const mouseX = useMotionValue(Infinity);
+    const mouseX = useMotionValue(Number.POSITIVE_INFINITY);
 
-    const renderChildren = () => {
-      return React.Children.map(children, (child) => {
+    const renderChildren = () =>
+      React.Children.map(children, (child) => {
         if (React.isValidElement(child) && child.type === DockIcon) {
           return React.cloneElement(child, {
             ...(child.props as any),
-            mouseX: mouseX,
+            mouseX,
             size: iconSize,
             magnification: iconMagnification,
             distance: iconDistance,
@@ -58,13 +60,12 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         }
         return child;
       });
-    };
 
     return (
       <motion.div
-        ref={ref}
+        onMouseLeave={() => mouseX.set(Number.POSITIVE_INFINITY)}
         onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
+        ref={ref}
         {...props}
         className={cn(dockVariants({ className }), {
           "items-start": direction === "top",
@@ -75,7 +76,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         {renderChildren()}
       </motion.div>
     );
-  },
+  }
 );
 
 Dock.displayName = "Dock";
@@ -102,7 +103,7 @@ const DockIcon = ({
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const padding = Math.max(6, size * 0.2);
-  const defaultMouseX = useMotionValue(Infinity);
+  const defaultMouseX = useMotionValue(Number.POSITIVE_INFINITY);
 
   const distanceCalc = useTransform(mouseX ?? defaultMouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -112,7 +113,7 @@ const DockIcon = ({
   const sizeTransform = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [size, magnification, size],
+    [size, magnification, size]
   );
 
   const scaleSize = useSpring(sizeTransform, {
@@ -123,12 +124,12 @@ const DockIcon = ({
 
   return (
     <motion.div
-      ref={ref}
-      style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
+        className
       )}
+      ref={ref}
+      style={{ width: scaleSize, height: scaleSize, padding }}
       {...props}
     >
       {children}
