@@ -2,10 +2,8 @@
 
 import { SocialDock } from "@/components/social-dock";
 import { SubstackFeed } from "@/components/substack-feed";
-import { TwitterFeed } from "@/components/twitter-feed";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { TextReveal } from "@/components/magicui/text-reveal";
-import Script from "next/script";
 
 export default function Home() {
   return (
@@ -81,9 +79,6 @@ export default function Home() {
                   className="text-accent hover:underline"
                 >@thenathancolo</a>
               </h3>
-              <div className="rounded-lg overflow-hidden border border-accent/10 shadow-lg">
-                <TwitterFeed />
-              </div>
             </div>
           </div>
         </section>

@@ -1,11 +1,8 @@
-import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
-import HeaderAuth from "@/components/header-auth";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { BuiltWith } from "@/components/built-with";
 import { GitCloneBtn } from "@/components/git-clone-btn";
 import "./globals.css";
 
@@ -43,7 +40,6 @@ export default function RootLayout({
             {/* Mobile: Built With and Location side by side above header */}
             <div className="md:hidden w-full max-w-5xl px-3 pt-3">
               <div className="flex justify-between items-center gap-3">
-                <BuiltWith className="static! flex! flex-row! items-center! gap-2! p-2! bg-white/5 backdrop-blur-xs border border-accent/10 rounded-lg [&_div.flex]:flex-row! [&_div.flex]:p-2! [&_div.flex]:gap-2! [&_div.-space-y-2]:space-y-0! [&_div.-space-y-2]:space-x-2! [&_h2]:border-none! [&_h2]:m-0!" />
                 <div className="flex items-center gap-2 p-2 bg-white/5 backdrop-blur-xs border border-accent/10 rounded-lg">
                   <MapPin className="w-4 h-4 text-accent" />
                   <span className="text-sm font-medium text-accent" style={{ fontFamily: 'var(--font-satoshi)' }}>
@@ -89,11 +85,6 @@ export default function RootLayout({
 
               <div className="flex flex-col gap-20 max-w-5xl p-5 w-full">
                 {children}
-              </div>
-
-              {/* Built With - shows at bottom on larger screens */}
-              <div className="hidden md:block">
-                <BuiltWith />
               </div>
 
               <footer className="w-full border-t border-accent/10">
