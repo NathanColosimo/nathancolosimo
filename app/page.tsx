@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { RetroGrid } from "@/components/magicui/retro-grid";
-import { TextReveal } from "@/components/magicui/text-reveal";
 import PostList from "@/components/post-list";
 import { SocialDock } from "@/components/social-dock";
 
@@ -22,22 +21,6 @@ export default function Home() {
           />
 
           <div className="relative z-10 flex flex-col gap-16">
-            {/* Hero Section */}
-            <section className="flex flex-col gap-4 pt-12">
-              <div className="group relative w-fit">
-                <div className="-inset-4 absolute rounded-2xl bg-secondary/50 blur-2xl transition-all duration-300 group-hover:blur-3xl" />
-                <h1 className="relative border-primary border-b-2 pb-4 font-bold font-heading text-8xl">
-                  Hi.
-                </h1>
-              </div>
-              <div className="min-h-[20vh] [&_p]:text-3xl! [&_p]:text-white/20! md:[&_p]:text-4xl! lg:[&_p]:text-5xl! xl:[&_p]:text-6xl! [&_span.absolute]:text-white/20! [&_span.motion]:text-foreground!">
-                <TextReveal
-                  className="h-[150vh]!"
-                  text="Currently exploring Aesthetics, Intelligence, Technology, and Systems ↓"
-                />
-              </div>
-            </section>
-
             {/* Social Links Section */}
             <section className="flex flex-col gap-6">
               <h2 className="w-fit border-accent border-b-2 pb-2 font-heading font-semibold text-2xl">
@@ -69,7 +52,7 @@ export default function Home() {
               <div className="flex flex-col gap-16">
                 <div className="space-y-4">
                   <h3 className="font-heading font-medium text-xl">Substack</h3>
-                    <PostList profileHandle="nathancolosimo" />
+                  <PostList profileHandle="nathancolosimo" />
                 </div>
                 <div className="space-y-4">
                   <h3 className="font-heading font-medium text-xl">
