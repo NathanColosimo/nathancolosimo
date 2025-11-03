@@ -59,7 +59,7 @@ type WordProps = {
   children: ReactNode;
   progress: MotionValue<number>;
   range: [number, number];
-}
+};
 
 const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
