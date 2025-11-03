@@ -1,8 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -38,16 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
           forcedTheme="dark"
         >
-          <main className="relative flex min-h-screen flex-col items-center">
-            <div className="flex w-full flex-1 flex-col items-center gap-20">
-              <Header />
-              <div className="flex w-full max-w-5xl flex-col gap-20 p-5">
-                {children}
-              </div>
-
-              <Footer />
-            </div>
-          </main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
