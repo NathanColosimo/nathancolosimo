@@ -5,6 +5,7 @@ import PostList from "@/components/post-list";
 import { SocialDock } from "@/components/social-dock";
 
 export default function Home() {
+
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="flex w-full max-w-5xl flex-col gap-20 p-5">

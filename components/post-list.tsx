@@ -3,12 +3,17 @@ import PostCardDisplay from "@/components/post-card-display";
 import { ItemGroup, ItemSeparator } from "@/components/ui/item";
 import { userPostsForId } from "@/lib/posts";
 import { profileForHandle } from "@/lib/profile";
+import { cacheLife } from "next/cache";
 
 type PostListProps = {
   profileHandle: string;
 };
 
 export default async function PostList(props: PostListProps) {
+  "use cache";
+
+  cacheLife("max");
+
   const profile = await profileForHandle(props.profileHandle);
 
   const postList = await userPostsForId(profile.id, { limit: 10 });
