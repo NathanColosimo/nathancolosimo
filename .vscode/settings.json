@@ -32,7 +32,6 @@
     "source.organizeImports.biome": "explicit"
   },
   "editor.defaultFormatter": "biomejs.biome",
-  "biome.lsp.bin": "./node_modules/.bin/biome",
   "files.associations": {
     "*.css": "tailwindcss",
     "*.scss": "tailwindcss"
