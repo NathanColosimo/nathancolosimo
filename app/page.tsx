@@ -28,12 +28,6 @@ export default function Home() {
 
         <div className="grid gap-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <div className="flex flex-col gap-12">
-            {/* Social Links Section */}
-            <section className="flex flex-col gap-6">
-              <h2 className="font-heading font-semibold text-2xl">Links</h2>
-              <SocialDock />
-            </section>
-
             {/* Professional Highlights Tabs */}
             <section className="flex flex-col gap-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
@@ -71,6 +65,12 @@ export default function Home() {
           </div>
 
           <aside className="flex flex-col gap-12">
+            {/* Social Links Section */}
+            <section className="flex flex-col gap-6">
+              <h2 className="font-heading font-semibold text-2xl">Links</h2>
+              <SocialDock />
+            </section>
+
             {/* Content Feed Section */}
             <section className="flex flex-col gap-6">
               <h2 className="font-heading font-semibold text-2xl">Substack</h2>

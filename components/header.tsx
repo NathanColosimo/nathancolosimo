@@ -1,13 +1,12 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import CloneButton from "./clone-button";
 
 export default function Header() {
   return (
     <nav className="mx-auto w-full max-w-5xl p-5">
       <div className="rounded-lg border border-accent/10 bg-white/5 p-4">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <Link
             className="flex items-center gap-3 font-bold font-heading text-xl hover:text-primary"
             href="/"
@@ -25,7 +24,6 @@ export default function Header() {
             </span>
           </div>
         </div>
-        <CloneButton />
       </div>
     </nav>
   );
