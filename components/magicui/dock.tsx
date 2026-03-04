@@ -16,12 +16,12 @@ import React, { type PropsWithChildren, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
-  className?: string;
-  iconSize?: number;
-  iconMagnification?: number;
-  iconDistance?: number;
-  direction?: "top" | "middle" | "bottom";
   children: React.ReactNode;
+  className?: string;
+  direction?: "top" | "middle" | "bottom";
+  iconDistance?: number;
+  iconMagnification?: number;
+  iconSize?: number;
 }
 
 const DEFAULT_SIZE = 40;
@@ -83,13 +83,13 @@ Dock.displayName = "Dock";
 
 export interface DockIconProps
   extends Omit<MotionProps & React.HTMLAttributes<HTMLDivElement>, "children"> {
-  size?: number;
-  magnification?: number;
-  distance?: number;
-  mouseX?: MotionValue<number>;
-  className?: string;
   children?: React.ReactNode;
+  className?: string;
+  distance?: number;
+  magnification?: number;
+  mouseX?: MotionValue<number>;
   props?: PropsWithChildren;
+  size?: number;
 }
 
 const DockIcon = ({

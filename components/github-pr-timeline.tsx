@@ -74,7 +74,7 @@ export default async function GitHubPRTimeline({
               {!isLastItem && (
                 <span
                   aria-hidden="true"
-                  className="-bottom-6 absolute top-9 left-3.5 w-px bg-border/70"
+                  className="absolute top-9 -bottom-6 left-3.5 w-px bg-border/70"
                 />
               )}
 

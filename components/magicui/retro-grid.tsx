@@ -2,10 +2,6 @@ import { cn } from "@/lib/utils";
 
 interface RetroGridProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
-   * Additional CSS classes to apply to the grid container
-   */
-  className?: string;
-  /**
    * Rotation angle of the grid in degrees
    * @default 65
    */
@@ -16,20 +12,24 @@ interface RetroGridProps extends React.HTMLAttributes<HTMLDivElement> {
    */
   cellSize?: number;
   /**
-   * Grid opacity value between 0 and 1
-   * @default 0.5
+   * Additional CSS classes to apply to the grid container
    */
-  opacity?: number;
+  className?: string;
+  /**
+   * Grid line color in dark mode
+   * @default "gray"
+   */
+  darkLineColor?: string;
   /**
    * Grid line color in light mode
    * @default "gray"
    */
   lightLineColor?: string;
   /**
-   * Grid line color in dark mode
-   * @default "gray"
+   * Grid opacity value between 0 and 1
+   * @default 0.5
    */
-  darkLineColor?: string;
+  opacity?: number;
 }
 
 export function RetroGrid({
