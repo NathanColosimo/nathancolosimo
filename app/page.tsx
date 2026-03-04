@@ -1,8 +1,6 @@
 import EducationSection from "@/components/education-section";
 import { ExperienceItem } from "@/components/experience-item";
-import ExperienceSection, {
-  experienceItems,
-} from "@/components/experience-section";
+import { experienceItems } from "@/components/experience-section";
 import Footer from "@/components/footer";
 import GitHubPRTimeline from "@/components/github-pr-timeline";
 import Header from "@/components/header";
@@ -24,19 +22,22 @@ export default function Home() {
         opacity={0.15}
       />
 
-      <div className="relative z-10 flex w-full max-w-6xl flex-col gap-16 px-5 py-12 lg:gap-20 lg:px-10">
+      <div className="relative z-10 flex w-full max-w-6xl flex-col gap-8 px-5 py-6 lg:gap-10 lg:px-10">
         <Header />
 
         <div className="grid gap-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <div className="flex flex-col gap-12">
+            {/* Social Links Section */}
+            <section className="flex flex-col gap-6">
+              <h2 className="font-heading font-semibold text-2xl">Links</h2>
+              <SocialDock />
+            </section>
+
             {/* Professional Highlights Tabs */}
             <section className="flex flex-col gap-6">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <h2 className="font-heading font-semibold text-2xl">
-                  Highlights
-                </h2>
-                <ExperienceSection />
-              </div>
+              <h2 className="font-heading font-semibold text-2xl">
+                Highlights
+              </h2>
               <Tabs className="flex flex-col gap-6" defaultValue="experience">
                 <TabsList aria-label="Work highlights">
                   <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -66,12 +67,6 @@ export default function Home() {
           </div>
 
           <aside className="flex flex-col gap-12">
-            {/* Social Links Section */}
-            <section className="flex flex-col gap-6">
-              <h2 className="font-heading font-semibold text-2xl">Links</h2>
-              <SocialDock />
-            </section>
-
             <section className="flex flex-col gap-6">
               <h2 className="font-heading font-semibold text-2xl">
                 Open Source PRs
