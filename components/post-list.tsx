@@ -5,9 +5,9 @@ import { ItemGroup, ItemSeparator } from "@/components/ui/item";
 import { userPostsForId } from "@/lib/posts";
 import { profileForHandle } from "@/lib/profile";
 
-type PostListProps = {
+interface PostListProps {
   profileHandle: string;
-};
+}
 
 export default async function PostList(props: PostListProps) {
   "use cache";

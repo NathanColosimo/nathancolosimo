@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/item";
 import type { Post } from "@/lib/post-types";
 
-type PostCardDisplayProps = {
+interface PostCardDisplayProps {
   post: Post;
-};
+}
 
 export default function PostCardDisplay(props: PostCardDisplayProps) {
   const post = props.post;

@@ -32,17 +32,17 @@ const GitHubSearchResponseSchema = z.object({
 
 type GitHubSearchItem = z.infer<typeof GitHubSearchItemSchema>;
 
-export type MergedPullRequest = {
+export interface MergedPullRequest {
+  comments: number;
+  excerpt?: string;
   id: number;
+  mergedAt: string;
+  repoName: string;
+  repoStars: number;
+  repoUrl: string;
   title: string;
   url: string;
-  repoName: string;
-  repoUrl: string;
-  repoStars: number;
-  comments: number;
-  mergedAt: string;
-  excerpt?: string;
-};
+}
 
 function githubHeaders(): HeadersInit {
   const token = process.env.GITHUB_TOKEN;

@@ -10,11 +10,11 @@ import {
   mergedOpenSourcePullRequests,
 } from "@/lib/github";
 
-type GitHubPRTimelineProps = {
-  username: string;
-  minimumStars?: number;
+interface GitHubPRTimelineProps {
   limit?: number;
-};
+  minimumStars?: number;
+  username: string;
+}
 
 function formatShortDate(value: string): string {
   const date = new Date(value);

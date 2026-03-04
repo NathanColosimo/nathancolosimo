@@ -10,24 +10,24 @@ import {
 } from "@/components/ui/item";
 import { cn } from "@/lib/utils";
 
-type ProjectItemProps = {
-  // Project title
-  title: string;
-  // Project description
-  description: string;
-  // Technologies used (optional)
-  technologies?: string[];
-  // GitHub repository URL (optional)
-  githubUrl?: string;
-  // Live demo URL (optional)
-  siteUrl?: string;
-  // Project icon or image (optional)
-  icon?: React.ReactNode;
-  // Status badge (e.g., "In Progress", "Completed", optional)
-  status?: string;
+interface ProjectItemProps {
   // Additional className for styling
   className?: string;
-};
+  // Project description
+  description: string;
+  // GitHub repository URL (optional)
+  githubUrl?: string;
+  // Project icon or image (optional)
+  icon?: React.ReactNode;
+  // Live demo URL (optional)
+  siteUrl?: string;
+  // Status badge (e.g., "In Progress", "Completed", optional)
+  status?: string;
+  // Technologies used (optional)
+  technologies?: string[];
+  // Project title
+  title: string;
+}
 
 /**
  * ProjectItem component for displaying project entries.

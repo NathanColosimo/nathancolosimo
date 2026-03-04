@@ -8,24 +8,24 @@ import {
 } from "@/components/ui/item";
 import { cn } from "@/lib/utils";
 
-export type ExperienceItemProps = {
+export interface ExperienceItemProps {
+  // Additional className for styling
+  className?: string;
   // Company/organization name
   company: string;
-  // Job title/position
-  position: string;
   // Date range (e.g., "Jan 2020 - Present" or "2020 - 2022")
   dateRange: string;
   // Job description
   description?: string;
+  // Link to company website (optional)
+  href?: string;
   // Location (optional)
   location?: string;
   // Company logo or icon (optional)
   logo?: React.ReactNode;
-  // Link to company website (optional)
-  href?: string;
-  // Additional className for styling
-  className?: string;
-};
+  // Job title/position
+  position: string;
+}
 
 /**
  * ExperienceItem component for displaying work experience entries.

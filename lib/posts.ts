@@ -45,7 +45,6 @@ export async function publicationPostsForURL(
   const offset = opts?.offset ? `&offset=${opts?.offset}` : "";
   const limit = opts?.limit ? `&limit=${opts.limit}` : "";
 
-  // biome-ignore lint/style/noMagicNumbers: limit is a valid number
   if (opts?.limit && (opts?.limit > 50 || opts?.limit < 1)) {
     throw new Error("Limit must be between 1 and 50");
   }

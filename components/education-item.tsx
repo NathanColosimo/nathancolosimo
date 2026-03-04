@@ -8,28 +8,28 @@ import {
 } from "@/components/ui/item";
 import { cn } from "@/lib/utils";
 
-type EducationItemProps = {
-  // Institution name
-  institution: string;
-  // Degree or qualification
-  degree: string;
-  // Field of study (optional)
-  field?: string;
+interface EducationItemProps {
+  // Additional className for styling
+  className?: string;
   // Date range (e.g., "2020 - 2024" or "2020")
   dateRange: string;
-  // Location (optional)
-  location?: string;
+  // Degree or qualification
+  degree: string;
   // Additional details or achievements (optional)
   details?: string;
-  // Institution logo or icon (optional)
-  logo?: React.ReactNode;
+  // Field of study (optional)
+  field?: string;
   // GPA or grade (optional)
   grade?: string;
   // Link to institution website (optional)
   href?: string;
-  // Additional className for styling
-  className?: string;
-};
+  // Institution name
+  institution: string;
+  // Location (optional)
+  location?: string;
+  // Institution logo or icon (optional)
+  logo?: React.ReactNode;
+}
 
 /**
  * EducationItem component for displaying education entries.
