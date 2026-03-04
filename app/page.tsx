@@ -4,6 +4,7 @@ import ExperienceSection, {
   experienceItems,
 } from "@/components/experience-section";
 import Footer from "@/components/footer";
+import GitHubPRTimeline from "@/components/github-pr-timeline";
 import Header from "@/components/header";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import PostList from "@/components/post-list";
@@ -69,6 +70,13 @@ export default function Home() {
             <section className="flex flex-col gap-6">
               <h2 className="font-heading font-semibold text-2xl">Links</h2>
               <SocialDock />
+            </section>
+
+            <section className="flex flex-col gap-6">
+              <h2 className="font-heading font-semibold text-2xl">
+                Open Source PRs
+              </h2>
+              <GitHubPRTimeline username="NathanColosimo" />
             </section>
 
             {/* Content Feed Section */}
