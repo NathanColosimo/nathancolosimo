@@ -64,6 +64,11 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
             </section>
+
+            <section className="flex flex-col gap-6">
+              <h2 className="font-heading font-semibold text-2xl">Substack</h2>
+              <PostList profileHandle="nathancolosimo" />
+            </section>
           </div>
 
           <aside className="flex flex-col gap-12">
@@ -72,12 +77,6 @@ export default function Home() {
                 Open Source PRs
               </h2>
               <GitHubPRTimeline username="NathanColosimo" />
-            </section>
-
-            {/* Content Feed Section */}
-            <section className="flex flex-col gap-6">
-              <h2 className="font-heading font-semibold text-2xl">Substack</h2>
-              <PostList profileHandle="nathancolosimo" />
             </section>
           </aside>
         </div>
