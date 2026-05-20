@@ -65,7 +65,7 @@ const coverImage = z.object({
 });
 
 const theme = z.object({
-  cover_image: coverImage,
+  cover_image: coverImage.optional(),
 });
 
 export const ProfileSchema = z
